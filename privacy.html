@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
         :root {
             --bg: #f7f6f3;
             --surface: #ffffff;
@@ -22,9 +22,9 @@
             --divider: #ece9e3;
             --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
         }
-
+ 
         html { scroll-behavior: smooth; }
-
+ 
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg);
@@ -33,7 +33,7 @@
             line-height: 1.75;
             -webkit-font-smoothing: antialiased;
         }
-
+ 
         /* NAV */
         nav {
             position: sticky;
@@ -48,7 +48,7 @@
             align-items: center;
             justify-content: space-between;
         }
-
+ 
         .nav-back {
             display: flex;
             align-items: center;
@@ -60,9 +60,9 @@
             letter-spacing: 0.01em;
             transition: opacity 0.2s;
         }
-
+ 
         .nav-back:hover { opacity: 0.7; }
-
+ 
         .nav-back svg {
             width: 16px;
             height: 16px;
@@ -72,7 +72,7 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
-
+ 
         .nav-label {
             font-size: 13px;
             font-weight: 500;
@@ -80,7 +80,7 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
-
+ 
         /* HERO */
         .hero {
             background: var(--surface);
@@ -88,7 +88,7 @@
             padding: 56px 24px 48px;
             text-align: center;
         }
-
+ 
         .hero-logo {
             width: 72px;
             height: 72px;
@@ -98,7 +98,7 @@
             display: block;
             box-shadow: var(--shadow);
         }
-
+ 
         .hero-logo-fallback {
             width: 72px;
             height: 72px;
@@ -113,7 +113,7 @@
             color: white;
             box-shadow: var(--shadow);
         }
-
+ 
         .hero h1 {
             font-family: 'DM Serif Display', serif;
             font-size: clamp(28px, 5vw, 40px);
@@ -123,24 +123,24 @@
             line-height: 1.2;
             margin-bottom: 10px;
         }
-
+ 
         .hero-meta {
             font-size: 13px;
             color: var(--text-muted);
             letter-spacing: 0.02em;
         }
-
+ 
         .hero-meta span {
             display: inline-block;
             margin: 0 8px;
         }
-
+ 
         .hero-meta span:not(:last-child)::after {
             content: '·';
             margin-left: 16px;
             color: var(--border);
         }
-
+ 
         /* COMMITMENT BANNER */
         .commitment {
             background: var(--accent-light);
@@ -152,12 +152,12 @@
             margin: 0 auto;
             border-radius: 0;
         }
-
+ 
         .commitment-inner {
             max-width: 720px;
             margin: 0 auto;
         }
-
+ 
         .commitment-headline {
             font-family: 'DM Serif Display', serif;
             font-size: clamp(18px, 3vw, 24px);
@@ -165,23 +165,23 @@
             margin-bottom: 12px;
             font-style: italic;
         }
-
+ 
         .commitment p {
             font-size: 15px;
             color: #3d5a3e;
             line-height: 1.7;
             margin-bottom: 8px;
         }
-
+ 
         .commitment p:last-child { margin-bottom: 0; }
-
+ 
         /* LAYOUT */
         .container {
             max-width: 760px;
             margin: 0 auto;
             padding: 0 24px;
         }
-
+ 
         /* DEFINITION BOX */
         .definition-box {
             background: var(--surface);
@@ -193,12 +193,12 @@
             font-size: 14px;
             color: var(--text-secondary);
         }
-
+ 
         .definition-box strong {
             color: var(--text-primary);
             font-weight: 600;
         }
-
+ 
         /* ABOUT */
         .about-section {
             margin: 32px 0;
@@ -207,7 +207,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
         }
-
+ 
         .about-section h2 {
             font-family: 'DM Serif Display', serif;
             font-size: 20px;
@@ -215,16 +215,16 @@
             color: var(--text-primary);
             margin-bottom: 14px;
         }
-
+ 
         .about-section p {
             font-size: 15px;
             color: var(--text-secondary);
             line-height: 1.75;
             margin-bottom: 10px;
         }
-
+ 
         .about-section p:last-child { margin-bottom: 0; }
-
+ 
         /* SECTIONS */
         .policy-section {
             margin: 0 0 2px;
@@ -233,11 +233,11 @@
             border-radius: 0;
             overflow: hidden;
         }
-
+ 
         .policy-section:first-of-type { border-radius: 12px 12px 0 0; }
         .policy-section:last-of-type { border-radius: 0 0 12px 12px; margin-bottom: 0; }
         .policy-section:only-of-type { border-radius: 12px; }
-
+ 
         .section-header {
             display: flex;
             align-items: flex-start;
@@ -246,7 +246,7 @@
             cursor: pointer;
             user-select: none;
         }
-
+ 
         .section-number {
             flex-shrink: 0;
             width: 28px;
@@ -262,7 +262,7 @@
             letter-spacing: 0.02em;
             margin-top: 1px;
         }
-
+ 
         .section-title {
             flex: 1;
             font-size: 16px;
@@ -270,7 +270,7 @@
             color: var(--text-primary);
             line-height: 1.4;
         }
-
+ 
         .section-chevron {
             flex-shrink: 0;
             width: 18px;
@@ -283,34 +283,34 @@
             transition: transform 0.25s ease;
             margin-top: 4px;
         }
-
+ 
         .policy-section.open .section-chevron {
             transform: rotate(180deg);
         }
-
+ 
         .section-body {
             display: none;
             padding: 0 24px 24px 68px;
             border-top: 1px solid var(--divider);
             padding-top: 20px;
         }
-
+ 
         .policy-section.open .section-body { display: block; }
-
+ 
         .section-body p {
             font-size: 15px;
             color: var(--text-secondary);
             line-height: 1.75;
             margin-bottom: 12px;
         }
-
+ 
         .section-body p:last-child { margin-bottom: 0; }
-
+ 
         .section-body ul {
             list-style: none;
             margin: 12px 0;
         }
-
+ 
         .section-body ul li {
             position: relative;
             padding-left: 18px;
@@ -319,7 +319,7 @@
             line-height: 1.7;
             margin-bottom: 6px;
         }
-
+ 
         .section-body ul li::before {
             content: '';
             position: absolute;
@@ -330,7 +330,7 @@
             border-radius: 50%;
             background: var(--accent-mid);
         }
-
+ 
         .section-body strong {
             color: var(--text-primary);
             font-weight: 600;
@@ -339,9 +339,9 @@
             font-size: 14px;
             letter-spacing: 0.01em;
         }
-
+ 
         .section-body strong:first-child { margin-top: 0; }
-
+ 
         .exception-box {
             background: #fdf8f0;
             border: 1px solid #e8d9b8;
@@ -350,7 +350,7 @@
             padding: 16px 18px;
             margin: 16px 0;
         }
-
+ 
         .exception-box .exception-title {
             font-size: 13px;
             font-weight: 600;
@@ -360,20 +360,20 @@
             margin-bottom: 8px;
             display: block;
         }
-
+ 
         .exception-box p {
             font-size: 14px;
             color: #6b5a30;
             margin-bottom: 8px;
         }
-
+ 
         .exception-box p:last-child { margin-bottom: 0; }
-
+ 
         /* SECTIONS GROUP */
         .sections-group {
             margin: 32px 0;
         }
-
+ 
         .sections-group-label {
             font-size: 11px;
             font-weight: 600;
@@ -383,7 +383,7 @@
             margin-bottom: 8px;
             padding-left: 4px;
         }
-
+ 
         /* CONTACT */
         .contact-card {
             background: var(--surface);
@@ -393,7 +393,7 @@
             margin: 32px 0;
             text-align: center;
         }
-
+ 
         .contact-card h2 {
             font-family: 'DM Serif Display', serif;
             font-size: 22px;
@@ -401,13 +401,13 @@
             margin-bottom: 10px;
             color: var(--text-primary);
         }
-
+ 
         .contact-card p {
             font-size: 15px;
             color: var(--text-secondary);
             margin-bottom: 18px;
         }
-
+ 
         .contact-email {
             display: inline-flex;
             align-items: center;
@@ -422,16 +422,16 @@
             letter-spacing: 0.01em;
             transition: opacity 0.2s;
         }
-
+ 
         .contact-email:hover { opacity: 0.85; }
-
+ 
         .contact-note {
             font-size: 13px;
             color: var(--text-muted);
             margin-top: 14px;
             margin-bottom: 0;
         }
-
+ 
         /* FOOTER */
         footer {
             border-top: 1px solid var(--border);
@@ -439,7 +439,7 @@
             text-align: center;
             margin-top: 48px;
         }
-
+ 
         footer p {
             font-size: 12px;
             color: var(--text-muted);
@@ -447,14 +447,14 @@
             max-width: 500px;
             margin: 0 auto 6px;
         }
-
+ 
         .footer-brand {
             font-size: 13px;
             font-weight: 500;
             color: var(--text-secondary);
             margin-bottom: 10px;
         }
-
+ 
         @media (max-width: 600px) {
             .section-body { padding-left: 24px; }
             .hero { padding: 40px 20px 36px; }
@@ -462,7 +462,7 @@
     </style>
 </head>
 <body>
-
+ 
 <nav>
     <a href="index.html" class="nav-back">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
@@ -470,7 +470,7 @@
     </a>
     <span class="nav-label">Privacy Policy</span>
 </nav>
-
+ 
 <div class="hero">
     <img
         src="images/GreyBeardGuy%20-%20Transparent%20Square.png"
@@ -485,7 +485,7 @@
         <span>Last Updated April 5, 2026</span>
     </div>
 </div>
-
+ 
 <div style="background: var(--accent-light); border-bottom: 1px solid #c5d9c5;">
     <div class="container">
         <div style="padding: 32px 0; text-align: center;">
@@ -496,23 +496,23 @@
         </div>
     </div>
 </div>
-
+ 
 <div class="container">
-
+ 
     <div class="definition-box">
         <strong>Definition —</strong> Throughout this privacy policy, "The App" refers to FitLogger, an iOS fitness tracking application developed by Steven Carson Booth under the GreyBeardGuy brand.
     </div>
-
+ 
     <div class="about-section">
         <h2>About The App and Its Developer</h2>
         <p>The App was created by Steven Carson Booth (Carson), an individual software developer based in Berlin, Germany, operating under the GreyBeardGuy brand. The App began as a personal tinkering project after Carson noticed that Apple Fitness did not track certain common exercises such as push-ups, pull-ups, and sit-ups. What started as a small personal tool grew into a larger fitness tracking application designed to fill that gap and support a wider range of personal health and activity data.</p>
         <p>The App is published and distributed as an independent application with no corporate backing, advertising partners, or third-party data relationships of any kind.</p>
     </div>
-
+ 
     <!-- WHO WE ARE -->
     <div class="sections-group">
         <div class="sections-group-label">Data &amp; Privacy</div>
-
+ 
         <div class="policy-section open">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">1</div>
@@ -525,7 +525,7 @@
                 <p>Under the General Data Protection Regulation (GDPR), a data controller is the person or entity that determines how personal data is processed. Because The App processes all data exclusively on your device and we never receive any data, our role as data controller is limited entirely to the design decisions embedded in the application itself.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">2</div>
@@ -553,7 +553,7 @@
                 </div>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">3</div>
@@ -571,7 +571,7 @@
                 <p>This data never leaves your device through The App. It is stored in your device's local storage and is subject to your device's own security, encryption, and backup settings.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">4</div>
@@ -591,7 +591,7 @@
                 <p>Apple's own HealthKit privacy terms apply to how Apple handles your health data within the Health app. The App's use of HealthKit complies with Apple's HealthKit developer guidelines, which prohibit using health data for advertising or selling to third parties.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">5</div>
@@ -602,7 +602,7 @@
                 <p>If you have iCloud Backup enabled on your device, your App data may be included in your iCloud backup as part of your overall device backup. This is controlled entirely by Apple and your device settings. The App does not initiate, manage, or have access to iCloud backups. Please refer to Apple's iCloud Privacy Policy for information on how Apple handles backup data.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">6</div>
@@ -622,11 +622,11 @@
             </div>
         </div>
     </div>
-
+ 
     <!-- YOUR RIGHTS -->
     <div class="sections-group">
         <div class="sections-group-label">Your Rights</div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">7</div>
@@ -649,7 +649,7 @@
                 <p>If you believe your data rights have been violated, you have the right to lodge a complaint with your national data protection authority. In Germany, this is the Bundesbeauftragte für den Datenschutz und die Informationsfreiheit (BfDI) at <a href="https://www.bfdi.bund.de" target="_blank" style="color: var(--accent);">www.bfdi.bund.de</a>.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">8</div>
@@ -669,11 +669,11 @@
             </div>
         </div>
     </div>
-
+ 
     <!-- ADDITIONAL -->
     <div class="sections-group">
         <div class="sections-group-label">Additional Information</div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">9</div>
@@ -685,7 +685,7 @@
                 <p>The App includes a Mature Content setting which, when enabled, unlocks the ability to track certain adult activities. This setting is disabled by default and must be explicitly enabled by the user. By enabling this setting, the user confirms they are of appropriate age to access such content in their jurisdiction. Parents and guardians are encouraged to review their device's Screen Time and app restriction settings to prevent minors from accessing inappropriate content within The App.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">10</div>
@@ -701,7 +701,7 @@
                 </ul>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">11</div>
@@ -712,7 +712,7 @@
                 <p>The App allows you to retain your data on your device for as long as the app is installed. You control your data retention entirely — you can delete individual entries, archive and remove old entries using the built-in Archive feature, or delete the app to remove all data permanently.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">12</div>
@@ -723,7 +723,7 @@
                 <p>If we make material changes to this privacy policy, we will update the Effective Date at the top of this document and publish the updated policy. Since The App is a privacy-first application with no data collection, significant changes to this policy are unlikely.</p>
             </div>
         </div>
-
+ 
         <div class="policy-section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div class="section-number">13</div>
@@ -743,7 +743,7 @@
             </div>
         </div>
     </div>
-
+ 
     <!-- CONTACT -->
     <div class="contact-card">
         <h2>14. Contact</h2>
@@ -754,21 +754,22 @@
         </a>
         <p class="contact-note">Steven Carson Booth — GreyBeardGuy<br>We will respond to all privacy inquiries within 30 days.</p>
     </div>
-
+ 
 </div>
-
+ 
 <footer>
     <p class="footer-brand">GreyBeardGuy · FitLogger</p>
     <p>FitLogger is an independent application developed by an individual developer. It is not affiliated with Apple Inc.</p>
     <p>Apple, HealthKit, iPhone, iCloud, and iOS are trademarks of Apple Inc.</p>
 </footer>
-
+ 
 <script>
     function toggleSection(header) {
         const section = header.parentElement;
         section.classList.toggle('open');
     }
 </script>
-
+ 
 </body>
 </html>
+ 
