@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GreyBeardGuy — FitLogger</title>
+<link rel="icon" type="image/png" href="images/GreyBeardGuy%20-%20Transparent%20Square.png">
+<link rel="apple-touch-icon" href="images/GreyBeardGuy%20-%20Transparent%20Square.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -45,11 +47,14 @@
   }
 
   .wordmark {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.01em;
-    color: var(--fg);
+    display: flex;
+    align-items: center;
     text-decoration: none;
+  }
+
+  .wordmark img {
+    height: 36px;
+    width: auto;
   }
 
   nav a.cta-nav {
@@ -380,7 +385,7 @@
 <body>
 
 <nav>
-  <a href="#" class="wordmark">GreyBeardGuy</a>
+  <a href="#" class="wordmark"><img src="images/GreyBeardGuy%20-%20Transparent%20Square.png" alt="GreyBeardGuy"></a>
   <a href="#" class="cta-nav">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;display:inline;margin-right:4px;vertical-align:middle"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM8 12l3 3 5-5"/></svg>
     App Store
@@ -437,7 +442,7 @@
     <p>I'm Carson — a 58-year-old indie developer based in Berlin. I built FitLogger because I couldn't find a fitness app that got out of the way and let me track what matters.</p>
     <p>No subscriptions. No social feed. No AI-generated workout plans. Just clean, honest logging — the way it should be.</p>
     <p style="font-size:0.85rem; margin-top:1.5rem;">
-      Questions? <a href="mailto:greybeardguy@icloud.com" style="color:var(--accent);text-decoration:none;">greybeardguy@icloud.com</a>
+      Questions? <a href="/cdn-cgi/l/email-protection#147366716d767175667073616d547d77787b61703a777b79" style="color:var(--accent);text-decoration:none;"><span class="__cf_email__" data-cfemail="c1a6b3a4b8a3a4a0b3a5a6b4b881a8a2adaeb4a5efa2aeac">[email&#160;protected]</span></a>
     </p>
   </div>
 </section>
@@ -484,7 +489,7 @@
 </section>
 
 <footer>
-  <span class="wordmark">GreyBeardGuy</span>
+  <a href="#" class="wordmark"><img src="images/GreyBeardGuy%20-%20Transparent%20Square.png" alt="GreyBeardGuy" style="height:28px;"></a>
   <p>© 2026 GreyBeardGuy. Built in Berlin.</p>
   <a href="mailto:greybeardguy@icloud.com">Contact</a>
 </footer>
