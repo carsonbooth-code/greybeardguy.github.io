@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — GreyBeardGuy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --surface2: #1c1c1c;
+            --border: #2a2a2a;
+            --text-primary: #f0ede8;
+            --text-secondary: #a0998e;
+            --text-muted: #5a554e;
+            --accent: #4a7c4e;
+            --accent-light: #6b9e6f;
+            --accent-glow: rgba(74, 124, 78, 0.15);
+            --accent-border: rgba(74, 124, 78, 0.25);
+        }
+ 
+        html { scroll-behavior: smooth; }
+ 
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            font-size: 16px;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+ 
+        /* NAV */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid #1a1a1a;
+            padding: 0 32px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+ 
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+ 
+        .nav-logo {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            object-fit: cover;
+        }
+ 
+        .nav-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: -0.01em;
+        }
+ 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+ 
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 500;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+ 
+        .nav-links a:hover { color: #fff; }
+        .nav-links a.active { color: var(--accent-light); }
+ 
+        /* HERO */
+        .hero {
+            background: #000;
+            padding: 72px 32px 64px;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 80% at 50% 100%, rgba(74,124,78,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+ 
+        .hero-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin: 0 auto 28px;
+            display: block;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.6);
+        }
+ 
+        .hero-logo-fallback {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--accent);
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 32px;
+            color: white;
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.6);
+        }
+ 
+        .hero-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent-light);
+            margin-bottom: 16px;
+        }
+ 
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            color: var(--text-primary);
+            margin-bottom: 18px;
+        }
+ 
+        .hero-sub {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 440px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+ 
+        /* LAYOUT */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+ 
+        /* ORIGIN SECTION */
+        .origin-section {
+            padding: 64px 0 0;
+        }
+ 
+        .section-eyebrow {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+ 
+        .origin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            margin-bottom: 2px;
+        }
+ 
+        .origin-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 28px;
+        }
+ 
+        .origin-card:first-child { border-radius: 12px 0 0 0; }
+        .origin-card:nth-child(2) { border-radius: 0 12px 0 0; }
+ 
+        .origin-card-full {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: none;
+            padding: 28px;
+            border-radius: 0 0 12px 12px;
+        }
+ 
+        .origin-card-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+ 
+        .origin-card-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+ 
+        .origin-card-value em {
+            font-style: normal;
+            color: var(--accent-light);
+        }
+ 
+        .origin-card-sub {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+ 
+        .origin-card-full p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 14px;
+            font-weight: 300;
+        }
+ 
+        .origin-card-full p:last-child { margin-bottom: 0; }
+ 
+        /* STORY SECTION */
+        .story-section {
+            padding: 48px 0 0;
+        }
+ 
+        .story-block {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2px;
+        }
+ 
+        .story-block + .story-block { border-radius: 0; margin-bottom: 2px; }
+        .story-block:last-child { border-radius: 0 0 12px 12px; margin-bottom: 0; }
+ 
+        .story-header {
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            user-select: none;
+        }
+ 
+        .story-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--accent-glow);
+            border: 1px solid var(--accent-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+ 
+        .story-icon svg {
+            width: 17px;
+            height: 17px;
+            stroke: var(--accent-light);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+ 
+        .story-title {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.005em;
+        }
+ 
+        .story-chevron {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-muted);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.25s ease;
+        }
+ 
+        .story-block.open .story-chevron {
+            transform: rotate(180deg);
+        }
+ 
+        .story-body {
+            display: none;
+            padding: 0 28px 28px 80px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+ 
+        .story-block.open .story-body { display: block; }
+ 
+        .story-body p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-weight: 300;
+        }
+ 
+        .story-body p:last-child { margin-bottom: 0; }
+ 
+        .story-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+ 
+        /* PHILOSOPHY STRIP */
+        .philosophy-strip {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin: 48px 0 0;
+            padding: 52px 32px;
+            text-align: center;
+        }
+ 
+        .philosophy-strip h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(22px, 3.5vw, 34px);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+ 
+        .philosophy-strip h2 em {
+            font-style: italic;
+            color: var(--accent-light);
+        }
+ 
+        .philosophy-strip p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+ 
+        /* PRINCIPLES */
+        .principles-section {
+            padding: 48px 0 0;
+        }
+ 
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2px;
+        }
+ 
+        .principle-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 24px;
+        }
+ 
+        .principle-card:first-child { border-radius: 12px 0 0 0; }
+        .principle-card:nth-child(2) { border-radius: 0 12px 0 0; }
+        .principle-card:nth-last-child(2) { border-radius: 0 0 0 12px; }
+        .principle-card:last-child { border-radius: 0 0 12px 0; }
+ 
+        .principle-num {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--accent-light);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+ 
+        .principle-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+ 
+        .principle-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+ 
+        /* APPS SECTION */
+        .apps-section {
+            padding: 48px 0 0;
+        }
+ 
+        .app-row {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            transition: border-color 0.25s, transform 0.2s;
+        }
+ 
+        .app-row:hover {
+            border-color: var(--accent-border);
+            transform: translateY(-2px);
+        }
+ 
+        .app-row-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+ 
+        .app-row-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+ 
+        .app-row-icon-fallback {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: white;
+            flex-shrink: 0;
+        }
+ 
+        .app-row-info { flex: 1; }
+ 
+        .app-row-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+ 
+        .app-row-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+ 
+        .app-row-arrow {
+            flex-shrink: 0;
+        }
+ 
+        .app-row-arrow svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-muted);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: stroke 0.2s, transform 0.2s;
+        }
+ 
+        .app-row:hover .app-row-arrow svg {
+            stroke: var(--accent-light);
+            transform: translateX(3px);
+        }
+ 
+        /* CONTACT */
+        .contact-section {
+            padding: 48px 0 64px;
+        }
+ 
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 36px 28px;
+            text-align: center;
+        }
+ 
+        .contact-card h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+ 
+        .contact-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            max-width: 380px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+ 
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s;
+        }
+ 
+        .contact-email:hover { opacity: 0.85; }
+ 
+        .contact-note {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 16px;
+        }
+ 
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+ 
+        .footer-left { font-size: 13px; color: var(--text-muted); }
+ 
+        .footer-links { display: flex; gap: 24px; }
+ 
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+ 
+        .footer-links a:hover { color: var(--text-secondary); }
+ 
+        @media (max-width: 640px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .container { padding: 0 20px; }
+            .origin-grid { grid-template-columns: 1fr; }
+            .origin-card:first-child { border-radius: 12px 12px 0 0; }
+            .origin-card:nth-child(2) { border-radius: 0; }
+            .story-body { padding-left: 28px; }
+            .principle-card:first-child { border-radius: 12px 12px 0 0; }
+            .principle-card:nth-child(2) { border-radius: 0; }
+            .principle-card:nth-last-child(2) { border-radius: 0; }
+            .principle-card:last-child { border-radius: 0 0 12px 12px; }
+            footer { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+ 
+<nav>
+    <a href="index.html" class="nav-brand">
+        <img
+            src="images/GreyBeardGuy%20-%20Transparent%20Square.png"
+            alt="GreyBeardGuy"
+            class="nav-logo"
+            onerror="this.style.display='none';"
+        >
+        <span class="nav-name">GreyBeardGuy</span>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="fitlogger.html">FitLogger</a>
+        <a href="privacy.html">Privacy</a>
+    </div>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+    <img
+        src="images/GreyBeardGuy%20-%20Transparent%20Square.png"
+        alt="GreyBeardGuy"
+        class="hero-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <div class="hero-logo-fallback" style="display:none;">G</div>
+    <p class="hero-eyebrow">The Man Behind the Beard</p>
+    <h1>Building software<br>worth using.</h1>
+    <p class="hero-sub">Independent apps made with care by one developer in Berlin who got tired of apps that don't respect your time, your data, or your intelligence.</p>
+</section>
+ 
+<div class="container">
+ 
+    <!-- ORIGIN -->
+    <section class="origin-section">
+        <p class="section-eyebrow">Quick Facts</p>
+        <div class="origin-grid">
+            <div class="origin-card">
+                <div class="origin-card-label">Developer</div>
+                <div class="origin-card-value">Steven <em>Carson</em> Booth</div>
+                <div class="origin-card-sub">Goes by Carson</div>
+            </div>
+            <div class="origin-card">
+                <div class="origin-card-label">Based In</div>
+                <div class="origin-card-value"><em>Berlin,</em> Germany</div>
+                <div class="origin-card-sub">Originally from elsewhere</div>
+            </div>
+        </div>
+        <div class="origin-card-full">
+            <p>Carson is an individual software developer operating under the GreyBeardGuy brand. Every app that carries the GreyBeardGuy name is designed, built, tested, and maintained by one person — which means every decision reflects a single consistent point of view: build tools that are genuinely useful, genuinely private, and genuinely honest.</p>
+            <p>There is no team, no investors, no roadmap driven by engagement metrics. Just a developer who builds the apps he wants to use, and shares them with anyone who might feel the same way.</p>
+        </div>
+    </section>
+ 
+    <!-- STORY -->
+    <section class="story-section">
+        <p class="section-eyebrow">The Story</p>
+ 
+        <div class="story-block open">
+            <div class="story-header" onclick="toggleStory(this)">
+                <div class="story-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </div>
+                <div class="story-title">How It Started</div>
+                <svg class="story-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="story-body">
+                <p>It started with push-ups. Carson was tracking his workouts and noticed that Apple Fitness, for all its polish, simply didn't record the most basic bodyweight exercises — push-ups, pull-ups, sit-ups. Things millions of people do every day, without equipment, without a gym.</p>
+                <p>So he built a small personal tool to track them. Then he added more activity types. Then charts. Then HealthKit integration. What started as a weekend tinkering project grew into <strong>FitLogger</strong> — a full-featured fitness tracker that fills exactly the gaps Apple left open.</p>
+            </div>
+        </div>
+ 
+        <div class="story-block">
+            <div class="story-header" onclick="toggleStory(this)">
+                <div class="story-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="story-title">Why Privacy-First</div>
+                <svg class="story-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="story-body">
+                <p>Carson didn't set out to make a privacy statement. He set out to build something he'd actually trust with his own health data — and that naturally meant keeping everything on-device.</p>
+                <p>The result is an architecture with no servers, no accounts, no cloud sync, and no third-party services of any kind. Not because privacy is a marketing angle, but because it's the only design that made sense. Your fitness data is personal. It should stay that way.</p>
+            </div>
+        </div>
+ 
+        <div class="story-block">
+            <div class="story-header" onclick="toggleStory(this)">
+                <div class="story-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="story-title">No Ads. No Exceptions.</div>
+                <svg class="story-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="story-body">
+                <p>GreyBeardGuy apps will never contain advertising. Not banner ads, not promoted content, not sponsored integrations. The economics are simple: if an app is worth building, it should be worth paying for — or at minimum worth offering freely without compromising the experience.</p>
+                <p>Carson uses every app he ships. Ads would ruin that experience as much for him as for anyone else. So there won't be any.</p>
+            </div>
+        </div>
+ 
+        <div class="story-block">
+            <div class="story-header" onclick="toggleStory(this)">
+                <div class="story-icon">
+                    <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="story-title">A Passion Project, Genuinely</div>
+                <svg class="story-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="story-body">
+                <p>The term "passion project" gets overused. In this case it means something specific: FitLogger exists because Carson wanted it to exist. It's not optimized for retention metrics or designed around a monetization funnel. It gets better because he keeps using it, keeps noticing things that could be improved, and keeps shipping updates.</p>
+                <p>That's the model. One developer, one set of standards, honest work.</p>
+            </div>
+        </div>
+ 
+    </section>
+ 
+</div>
+ 
+<!-- PHILOSOPHY STRIP — full bleed -->
+<div class="philosophy-strip">
+    <h2>Software should serve the<br>person using it. <em>Full stop.</em></h2>
+    <p>No engagement traps. No dark patterns. No harvested attention. Apps that do one thing well, stay out of the way, and earn their place on your home screen.</p>
+</div>
+ 
+<div class="container">
+ 
+    <!-- PRINCIPLES -->
+    <section class="principles-section">
+        <p class="section-eyebrow">Design Principles</p>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-num">01</div>
+                <div class="principle-title">Local-First</div>
+                <div class="principle-desc">Your data lives on your device. No accounts required, no servers involved, no risk of a data breach at our end — because there's no "our end".</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-num">02</div>
+                <div class="principle-title">No Advertising</div>
+                <div class="principle-desc">Apps that carry ads serve two masters. GreyBeardGuy apps serve one: the person using them. Advertising will never appear in any app under this brand.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-num">03</div>
+                <div class="principle-title">Honest Complexity</div>
+                <div class="principle-desc">Simple on the surface, powerful underneath. Features are earned by real use — not added for the sake of a feature list or an App Store screenshot.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-num">04</div>
+                <div class="principle-title">Long-Term Craft</div>
+                <div class="principle-desc">No rush to ship and move on. Apps get maintained, refined, and improved as long as they're in use. Slow, steady, and built to last.</div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- APPS -->
+    <section class="apps-section">
+        <p class="section-eyebrow">Apps</p>
+        <a href="fitlogger.html" class="app-row">
+            <div class="app-row-icon">
+                <img
+                    src="images/GreyBeardGuy%20-%20Transparent%20Square.png"
+                    alt="FitLogger"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'app-row-icon-fallback\'>F</div>';"
+                >
+            </div>
+            <div class="app-row-info">
+                <div class="app-row-name">FitLogger</div>
+                <div class="app-row-desc">iOS fitness tracker for the activities Apple Fitness doesn't cover. Local-only, no ads, HealthKit import.</div>
+            </div>
+            <div class="app-row-arrow">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+        </a>
+    </section>
+ 
+    <!-- CONTACT -->
+    <section class="contact-section">
+        <div class="contact-card">
+            <h2>Say Hello</h2>
+            <p>Questions, feedback, bug reports, or just a friendly message — Carson reads everything and tries to respond to all of it.</p>
+            <a href="mailto:TheGreyBeardGuy@icloud.com?subject=Hello%20from%20the%20Website" class="contact-email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+                TheGreyBeardGuy@icloud.com
+            </a>
+            <p class="contact-note">Berlin, Germany · Responses within a few days</p>
+        </div>
+    </section>
+ 
+</div>
+ 
+<footer>
+    <div class="footer-left">© 2026 GreyBeardGuy · Berlin, Germany</div>
+    <div class="footer-links">
+        <a href="fitlogger.html">FitLogger</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:TheGreyBeardGuy@icloud.com">Contact</a>
+    </div>
+</footer>
+ 
+<script>
+    function toggleStory(header) {
+        const block = header.parentElement;
+        block.classList.toggle('open');
+    }
+</script>
+ 
+</body>
+</html>
