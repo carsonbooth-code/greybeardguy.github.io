@@ -34,6 +34,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* NAV */
         nav {
             position: sticky;
             top: 0;
@@ -61,6 +62,763 @@
         }
 
         .nav-back:hover { opacity: 0.7; }
+
+        .nav-back svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .nav-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .nav-link {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s;
+        }
+
+        .nav-link:hover { opacity: 0.7; }
+
+        /* HERO */
+        .hero {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 56px 24px 48px;
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-logo-fallback {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: var(--accent);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 400;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .hero-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+        }
+
+        .hero-meta span {
+            display: inline-block;
+            margin: 0 8px;
+        }
+
+        .hero-meta span:not(:last-child)::after {
+            content: '·';
+            margin-left: 16px;
+            color: var(--border);
+        }
+
+        /* INTRO BANNER */
+        .intro-banner {
+            background: #fdf8f0;
+            border-bottom: 1px solid #e8d9b8;
+        }
+
+        .intro-banner-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 28px 24px;
+            text-align: center;
+        }
+
+        .intro-banner h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(18px, 3vw, 22px);
+            color: #8b6914;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .intro-banner p {
+            font-size: 15px;
+            color: #6b5a30;
+            line-height: 1.75;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .intro-banner p:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        /* LAYOUT */
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* DEFINITION BOX */
+        .definition-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent-mid);
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin: 40px 0 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .definition-box strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* SECTIONS */
+        .policy-section {
+            margin: 0 0 2px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .policy-section:first-of-type { border-radius: 12px 12px 0 0; }
+        .policy-section:last-of-type { border-radius: 0 0 12px 12px; margin-bottom: 0; }
+        .policy-section:only-of-type { border-radius: 12px; }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px 24px 20px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .section-number {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--accent-light);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            margin-top: 1px;
+        }
+
+        .section-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .section-chevron {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-muted);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.25s ease;
+            margin-top: 4px;
+        }
+
+        .policy-section.open .section-chevron {
+            transform: rotate(180deg);
+        }
+
+        .section-body {
+            display: none;
+            padding: 0 24px 24px 68px;
+            border-top: 1px solid var(--divider);
+            padding-top: 20px;
+        }
+
+        .policy-section.open .section-body { display: block; }
+
+        .section-body p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        .section-body p:last-child { margin-bottom: 0; }
+
+        .section-body ul {
+            list-style: none;
+            margin: 12px 0;
+        }
+
+        .section-body ul li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 6px;
+        }
+
+        .section-body ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent-mid);
+        }
+
+        .section-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin: 16px 0 6px;
+            font-size: 14px;
+            letter-spacing: 0.01em;
+        }
+
+        .section-body strong:first-child { margin-top: 0; }
+
+        .warning-box {
+            background: #fdf0f0;
+            border: 1px solid #e8b8b8;
+            border-left: 3px solid #c43c3c;
+            border-radius: 8px;
+            padding: 16px 18px;
+            margin: 16px 0;
+        }
+
+        .warning-box .warning-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #8b1414;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .warning-box p {
+            font-size: 14px;
+            color: #6b3030;
+            margin-bottom: 8px;
+        }
+
+        .warning-box p:last-child { margin-bottom: 0; }
+
+        /* SECTIONS GROUP */
+        .sections-group {
+            margin: 32px 0;
+        }
+
+        .sections-group-label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        /* CROSS-REFERENCE CARD */
+        .cross-ref-card {
+            background: var(--accent-light);
+            border: 1px solid var(--accent-mid);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .cross-ref-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .cross-ref-card p {
+            font-size: 14px;
+            color: #3d5a3e;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .cross-ref-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .cross-ref-link:hover { opacity: 0.7; }
+
+        /* CONTACT */
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            margin: 32px 0;
+            text-align: center;
+        }
+
+        .contact-card h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .contact-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: opacity 0.2s;
+        }
+
+        .contact-email:hover { opacity: 0.85; }
+
+        .contact-note {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 6px;
+        }
+
+        .footer-brand {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 8px;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover { opacity: 0.7; }
+
+        @media (max-width: 600px) {
+            .section-body { padding-left: 24px; }
+            .hero { padding: 40px 20px 36px; }
+            .nav-right { gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="nav-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Back
+    </a>
+    <div class="nav-right">
+        <a href="privacy.html" class="nav-link">Privacy Policy</a>
+        <span class="nav-label">Terms</span>
+    </div>
+</nav>
+
+<div class="hero">
+    <img
+        src="images/GreyBeardGuy%20-%20Transparent%20Square.png"
+        alt="GreyBeardGuy"
+        class="hero-logo"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+    >
+    <div class="hero-logo-fallback" style="display:none;">G</div>
+    <h1>Terms of Service</h1>
+    <div class="hero-meta">
+        <span>Effective April 23, 2026</span>
+        <span>Last Updated April 23, 2026</span>
+    </div>
+</div>
+
+<div class="intro-banner">
+    <div class="intro-banner-inner">
+        <h2>Please Read Carefully</h2>
+        <p>These Terms of Service govern your use of The App. By installing, accessing, or using The App, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
+        <p>If you do not agree with any part of these terms, you should discontinue use of The App and uninstall it from your device.</p>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="definition-box">
+        <strong>Definition —</strong> Throughout these Terms of Service, "The App" refers to GetPhyt, an iOS fitness tracking application developed by Carson Booth under the GreyBeardGuy brand. "We," "us," and "our" refer to Carson Booth operating as GreyBeardGuy. "You" and "your" refer to the user of The App. These Terms are supplemented by our <a href="privacy.html" style="color: var(--accent); font-weight: 600;">Privacy Policy</a>, which describes how The App handles data.
+    </div>
+
+    <!-- ACCEPTABLE USE -->
+    <div class="sections-group">
+        <div class="sections-group-label">Acceptable Use</div>
+
+        <div class="policy-section open">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">1</div>
+                <div class="section-title">Fair Use &amp; Permitted Purpose</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>The App is provided for personal, non-commercial use as an individual fitness tracking tool. It is designed for adult users to log and visualize their own physical activities, supplements, fasting schedules, and similar personal wellness data.</p>
+                <strong>You agree:</strong>
+                <ul>
+                    <li>Not to reverse engineer, decompile, disassemble, or attempt to derive the source code of The App, except to the extent this restriction is prohibited by applicable law.</li>
+                    <li>Not to resell, redistribute, or commercially exploit The App or any data exported from it as a product or service.</li>
+                    <li>Not to use The App to store, track, or transmit unlawful content or content that infringes on the rights of others.</li>
+                    <li>Not to attempt to bypass, interfere with, or disrupt the security features, data storage mechanisms, or intended functionality of The App.</li>
+                    <li>Not to use The App in any manner that could damage, disable, overburden, or impair any Apple services (HealthKit, iCloud) or the device on which The App runs.</li>
+                </ul>
+                <p>The App is not intended for use in medical diagnosis, clinical decision-making, professional athletic coaching, legal proceedings, insurance claims, or any other high-stakes context where accuracy is critical.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">2</div>
+                <div class="section-title">Eligibility</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>The App is designed for adult fitness tracking. By using The App, you represent that you are at least the age of majority in your jurisdiction and legally capable of entering into a binding agreement.</p>
+                <p>The App includes a Mature Content setting which, when enabled, allows the tracking of certain adult activities. This setting is disabled by default. By enabling this setting, you confirm that you are of appropriate age to access such content in your jurisdiction.</p>
+                <p>Parents and guardians are responsible for monitoring their minor children's use of The App and should use device-level restrictions (such as Apple's Screen Time) to limit access if appropriate.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AS-IS & WARRANTIES -->
+    <div class="sections-group">
+        <div class="sections-group-label">Warranties &amp; Disclaimers</div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">3</div>
+                <div class="section-title">As-Is Provision</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>The App is provided <strong style="display:inline;">"as is" and "as available"</strong> without warranty of any kind, either express or implied, to the maximum extent permitted by applicable law. We make no representations or warranties regarding:</p>
+                <ul>
+                    <li>The accuracy, reliability, completeness, or timeliness of any data displayed, calculated, imported, or exported by The App.</li>
+                    <li>The fitness of The App for any particular purpose, including but not limited to fitness tracking, health monitoring, weight management, or dietary planning.</li>
+                    <li>The uninterrupted, error-free, or secure operation of The App.</li>
+                    <li>The compatibility of The App with any specific device, iOS version, or third-party service.</li>
+                    <li>The preservation of data across device changes, iOS updates, iCloud backup/restore operations, or App uninstallation and reinstallation.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">4</div>
+                <div class="section-title">Disclaimer of Warranties</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>To the fullest extent permitted by applicable law, we expressly disclaim all warranties of any kind, whether express, implied, statutory, or otherwise, including but not limited to:</p>
+                <ul>
+                    <li>Implied warranties of <strong style="display:inline;">merchantability</strong> and <strong style="display:inline;">fitness for a particular purpose</strong>.</li>
+                    <li>Warranties of <strong style="display:inline;">non-infringement</strong> of third-party rights.</li>
+                    <li>Warranties arising from course of dealing, course of performance, or usage of trade.</li>
+                    <li>Warranties regarding the <strong style="display:inline;">accuracy of HealthKit data</strong> imported into The App. HealthKit data is provided by Apple and third-party sources; The App displays this data without independent verification.</li>
+                    <li>Warranties regarding <strong style="display:inline;">calculated values</strong> such as BMI, calorie estimates, or trend projections. These are provided as informational estimates only and should not be relied upon for medical, dietary, or fitness decisions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">5</div>
+                <div class="section-title">No Reliance for Medical or Health Decisions</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <div class="warning-box">
+                    <span class="warning-title">Important Health Notice</span>
+                    <p>The App is not a medical device. Data and calculations provided by The App are for personal informational and organizational purposes only.</p>
+                </div>
+                <p>You should not rely on The App for:</p>
+                <ul>
+                    <li>Medical diagnosis, treatment, prevention, or monitoring of any disease or condition.</li>
+                    <li>Decisions about prescription medications, supplements, or treatment plans.</li>
+                    <li>Emergency medical situations.</li>
+                    <li>Clinical decision-making by yourself or healthcare providers.</li>
+                </ul>
+                <p><strong style="display:inline;">Always consult qualified medical professionals</strong> for health-related decisions. Do not disregard professional medical advice or delay seeking it because of information displayed by The App.</p>
+                <p>Activity logs, goal tracking, calorie estimates, BMI calculations, and any other health-related information displayed in The App are based solely on data you enter or import. We make no representations as to the accuracy, completeness, or suitability of this information for any particular purpose.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">6</div>
+                <div class="section-title">Data Accuracy and Loss</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>We make no guarantee that:</p>
+                <ul>
+                    <li>Data you enter or import will be retained indefinitely.</li>
+                    <li>Data exports (such as JSON archives) will be free of errors or omissions.</li>
+                    <li>Imported data from external sources (HealthKit, JSON files) will be interpreted identically to the original source.</li>
+                    <li>Software updates will preserve all data across versions.</li>
+                </ul>
+                <p><strong style="display:inline;">You are solely responsible for maintaining your own backups</strong> of any data you consider important. We strongly recommend regular use of the Archive and Email feature to preserve your data independently of The App's internal storage.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">7</div>
+                <div class="section-title">No Professional Advice</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>Information presented by The App, including calculated metrics, trends, goals, and visualizations, does not constitute professional advice of any kind — medical, nutritional, fitness, legal, financial, or otherwise. Any decisions made based on information from The App are made at your own risk.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIABILITY -->
+    <div class="sections-group">
+        <div class="sections-group-label">Liability</div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">8</div>
+                <div class="section-title">Limitation of Liability</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>To the maximum extent permitted by applicable law, Carson Booth and GreyBeardGuy shall not be liable for any:</p>
+                <ul>
+                    <li><strong style="display:inline;">Direct damages</strong> arising from the use or inability to use The App, including but not limited to loss of data, loss of time, or inaccurate information.</li>
+                    <li><strong style="display:inline;">Indirect, incidental, special, consequential, or punitive damages</strong>, including but not limited to loss of profits, loss of business opportunity, personal injury, property damage, or emotional distress.</li>
+                    <li><strong style="display:inline;">Third-party claims</strong> arising from your use of The App.</li>
+                    <li><strong style="display:inline;">Damages caused by third-party services</strong> such as Apple HealthKit, iCloud, or the iOS operating system.</li>
+                </ul>
+                <p>This limitation applies regardless of the legal theory of liability (contract, tort, strict liability, statute, or otherwise) and even if we have been advised of the possibility of such damages.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">9</div>
+                <div class="section-title">Carve-outs for Consumer Rights</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>Nothing in these Terms limits or excludes:</p>
+                <ul>
+                    <li>Liability for <strong style="display:inline;">death or personal injury</strong> caused by negligence.</li>
+                    <li>Liability for <strong style="display:inline;">fraud or fraudulent misrepresentation</strong>.</li>
+                    <li><strong style="display:inline;">Statutory rights of consumers</strong> under applicable consumer protection law, including but not limited to the German Civil Code (<em>Bürgerliches Gesetzbuch</em>, BGB) and EU consumer directives for users located in the European Union.</li>
+                    <li>Any liability that cannot be excluded or limited under applicable law.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- GENERAL -->
+    <div class="sections-group">
+        <div class="sections-group-label">General</div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">10</div>
+                <div class="section-title">Changes to The App</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Modify, update, or discontinue The App or any feature of The App at any time, with or without notice.</li>
+                    <li>Change pricing, subscription models, or feature availability in future versions.</li>
+                    <li>Remove or modify Activity Types, calculation methods, or visualizations as the product evolves.</li>
+                </ul>
+                <p>We are not liable for any inconvenience, loss, or damage arising from changes to The App.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">11</div>
+                <div class="section-title">Changes to These Terms</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>We may update these Terms of Service from time to time. If we make material changes, we will update the Effective Date at the top of this document and publish the updated terms. Your continued use of The App after any changes constitutes your acceptance of the new Terms.</p>
+                <p>If you do not agree with updated Terms, you should discontinue use of The App and uninstall it from your device.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">12</div>
+                <div class="section-title">Governing Law</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>These Terms of Service are governed by the laws of the Federal Republic of Germany, without regard to conflict of law principles. For users in the European Union, nothing in these Terms deprives you of the protection afforded by the mandatory consumer protection laws of your country of residence.</p>
+            </div>
+        </div>
+
+        <div class="policy-section">
+            <div class="section-header" onclick="toggleSection(this)">
+                <div class="section-number">13</div>
+                <div class="section-title">Your Acceptance</div>
+                <svg class="section-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="section-body">
+                <p>By using The App, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our <a href="privacy.html" style="color: var(--accent);">Privacy Policy</a>.</p>
+                <p>If you do not agree with any part of these Terms, you should discontinue use of The App and uninstall it from your device.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CROSS REFERENCE TO PRIVACY -->
+    <div class="cross-ref-card">
+        <h3>Privacy Policy</h3>
+        <p>For information about how The App handles data — including our core commitment to zero data collection, HealthKit integration, and your privacy rights under GDPR and US laws — please review our Privacy Policy.</p>
+        <a href="privacy.html" class="cross-ref-link">
+            Read Privacy Policy
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-card">
+        <h2>Contact</h2>
+        <p>If you have any questions or concerns regarding these Terms of Service, please contact:</p>
+        <a href="mailto:support@greybeardguy.app?subject=Support - Terms%20Inquiry" class="contact-email">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            support@greybeardguy.app
+        </a>
+        <p class="contact-note">GreyBeardGuy<br>We will respond to inquiries within 15 days.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p class="footer-brand">GreyBeardGuy · GetPhyt</p>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="tos.html">Terms of Service</a>
+    </div>
+    <p>GetPhyt is an independent application developed by an individual developer.<br>It is not affiliated with Apple Inc.</p>
+    <p>Apple, HealthKit, iPhone, iCloud, and iOS are trademarks of Apple Inc.</p>
+</footer>
+
+<script>
+    function toggleSection(header) {
+        const section = header.parentElement;
+        section.classList.toggle('open');
+    }
+</script>
+
+</body>
+</html>        .nav-back:hover { opacity: 0.7; }
 
         .nav-back svg {
             width: 16px;
